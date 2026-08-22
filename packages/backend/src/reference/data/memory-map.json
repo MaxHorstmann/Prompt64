@@ -1,0 +1,10 @@
+[
+  { "address": "$0000-$00FF", "name": "Zero page", "description": "Fastest-addressed RAM; commonly used for pointers and loop counters" },
+  { "address": "$0400-$07E7", "name": "Default screen memory", "description": "1000 bytes, one per character cell on the default text screen" },
+  { "address": "$0801", "name": "BASIC program start", "description": "Default load address for a BASIC stub / SYS launcher" },
+  { "address": "$C000-$CFFF", "name": "Free RAM", "description": "Common location for machine code programs when BASIC/KERNAL ROM is banked in" },
+  { "address": "$D000-$D3FF", "name": "VIC-II registers", "description": "Video chip registers (when I/O is banked in)" },
+  { "address": "$D400-$D7FF", "name": "SID registers", "description": "Sound chip registers" },
+  { "address": "$D800-$DBFF", "name": "Color RAM", "description": "Nibble per screen cell, foreground color" },
+  { "address": "$DC00-$DCFF", "name": "CIA #1", "description": "Keyboard matrix, joystick port 1/2, timers" }
+]
