@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "concurrently -n backend,frontend -c blue,green \"npm run dev -w @prompt64/backend\" \"npm run dev -w @prompt64/frontend\"",
     "build": "npm run build -w @prompt64/shared && npm run build -w @prompt64/backend && npm run build -w @prompt64/frontend",
-    "typecheck": "npm run build -w @prompt64/shared && npm run typecheck -w @prompt64/backend && npm run typecheck -w @prompt64/frontend"
+    "typecheck": "npm run build -w @prompt64/shared && npm run typecheck -w @prompt64/backend && npm run typecheck -w @prompt64/frontend",
+    "test": "npm run build -w @prompt64/shared && npm run test -w @prompt64/backend"
   },
   "devDependencies": {
     "concurrently": "^9.1.0",

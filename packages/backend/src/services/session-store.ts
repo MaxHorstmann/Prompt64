@@ -43,6 +43,9 @@ export class SessionStore {
     const cutoff = Date.now() - config.sessionTtlMs;
     for (const [id, session] of this.sessions) {
       if (session.lastActiveAt.getTime() < cutoff) {
+        for (const socket of session.sockets) {
+          socket.close(1001, "Session expired");
+        }
         this.sessions.delete(id);
       }
     }

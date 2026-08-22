@@ -19,10 +19,15 @@ export function SessionProvider({ children }: { children: ReactNode }) {
 
     api
       .createSession()
-      .then((summary) => {
+      .then((detail) => {
         if (cancelled) return;
-        dispatch({ type: "SESSION_LOADED", sessionId: summary.id, source: "", messages: [] });
-        setWsUrl(wsUrlForSession(summary.id));
+        dispatch({
+          type: "SESSION_LOADED",
+          sessionId: detail.id,
+          source: detail.currentSource,
+          messages: detail.messages,
+        });
+        setWsUrl(wsUrlForSession(detail.id));
       })
       .catch((err) => {
         console.error("Failed to create session", err);
