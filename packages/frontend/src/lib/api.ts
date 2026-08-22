@@ -1,4 +1,4 @@
-import type { SessionDetail, SessionSummary } from "@prompt64/shared";
+import type { SessionDetail } from "@prompt64/shared";
 
 async function json<T>(res: Response): Promise<T> {
   if (!res.ok) {
@@ -8,8 +8,8 @@ async function json<T>(res: Response): Promise<T> {
 }
 
 export const api = {
-  createSession: (): Promise<SessionSummary> =>
-    fetch("/api/sessions", { method: "POST" }).then((res) => json<SessionSummary>(res)),
+  createSession: (): Promise<SessionDetail> =>
+    fetch("/api/sessions", { method: "POST" }).then((res) => json<SessionDetail>(res)),
 
   getSession: (id: string): Promise<SessionDetail> =>
     fetch(`/api/sessions/${id}`).then((res) => json<SessionDetail>(res)),

@@ -32,12 +32,12 @@ export async function runAgentTurn(session: SessionState, userText: string): Pro
       max_iterations: config.maxAgentIterations,
     });
 
-    let finalText = "";
+    const textByIteration: string[] = [];
     for await (const message of runner) {
+      const iterationText: string[] = [];
       for (const block of message.content) {
         if (block.type === "text") {
-          finalText += block.text;
-          broadcast(session, { type: "agent_response", text: block.text });
+          iterationText.push(block.text);
         } else if (block.type === "thinking") {
           broadcast(session, { type: "agent_thinking", text: block.thinking });
         } else if (block.type === "tool_use") {
@@ -49,6 +49,18 @@ export async function runAgentTurn(session: SessionState, userText: string): Pro
           });
         }
       }
+      if (iterationText.length > 0) {
+        textByIteration.push(iterationText.join(""));
+      }
+    }
+
+    // Each yielded `message` is one API round trip; only the text from the
+    // final round (the one with no further tool calls) is the answer shown
+    // to the user. Earlier rounds' text, if any, is just running commentary
+    // ahead of a tool call and isn't worth a separate chat bubble.
+    const finalText = textByIteration.at(-1) ?? "";
+    if (finalText) {
+      broadcast(session, { type: "agent_response", text: finalText });
     }
 
     session.messages.push({

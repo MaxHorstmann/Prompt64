@@ -12,6 +12,6 @@ export function createTools(ctx: ToolContext) {
     createWriteSourceTool(ctx),
     createEditSourceTool(ctx),
     createCompileTool(ctx),
-    createGetC64ReferenceTool(),
+    createGetC64ReferenceTool(ctx),
   ];
 }
