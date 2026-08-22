@@ -7,7 +7,7 @@ export async function wsRoutes(app: FastifyInstance) {
   app.get<{ Params: { id: string } }>("/api/sessions/:id/ws", { websocket: true }, (socket, req) => {
     const session = sessionStore.get(req.params.id);
     if (!session) {
-      socket.send(JSON.stringify({ type: "error", message: "Session not found" }));
+      socket.send(JSON.stringify({ type: "session_not_found" }));
       socket.close();
       return;
     }
@@ -28,6 +28,8 @@ export async function wsRoutes(app: FastifyInstance) {
 
       if (message.type === "user_message") {
         void runAgentTurn(session, message.text);
+      } else if (message.type === "ping") {
+        socket.send(JSON.stringify({ type: "pong" }));
       }
     });
 
