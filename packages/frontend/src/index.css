@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #1e1e2e;
+  color: #e0e0f0;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.app-header h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.source-toggle {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.connection-banner {
+  background: #5b3a00;
+  color: #ffd699;
+  font-size: 0.85rem;
+  padding: 0.25rem 1rem;
+  text-align: center;
+}
+
+.app-main {
+  flex: 1;
+  min-height: 0;
+}
+
+.split-layout {
+  height: 100%;
+}
+
+.split-panel {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.split-resize-handle {
+  width: 4px;
+  background: #333;
+  cursor: col-resize;
+}
+
+.chat-pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-pane-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem;
+}
+
+.empty-hint {
+  color: #888;
+  font-style: italic;
+}
+
+.message-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: #2a2a3d;
+}
+
+.message p {
+  margin: 0.25rem 0 0;
+  white-space: pre-wrap;
+}
+
+.message-role {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.chat-error {
+  color: #ff8080;
+}
+
+.activity-feed {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.activity-feed ul {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.activity-item {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid #333;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.35rem;
+  border: 1px solid #444;
+  background: #14141f;
+  color: inherit;
+}
+
+.chat-input button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.35rem;
+  border: none;
+  background: #4a5cff;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-input button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.emulator-pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.emulator-controls {
+  padding: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.emulator-frame {
+  flex: 1;
+  border: none;
+  background: black;
+}
+
+.source-viewer {
+  padding: 0.75rem;
+  overflow: auto;
+}
+
+.source-viewer pre {
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+}

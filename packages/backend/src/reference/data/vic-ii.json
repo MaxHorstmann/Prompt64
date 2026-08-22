@@ -1,0 +1,14 @@
+[
+  { "address": "$D000", "name": "SP0X", "description": "Sprite 0 X coordinate", "category": "sprites" },
+  { "address": "$D001", "name": "SP0Y", "description": "Sprite 0 Y coordinate", "category": "sprites" },
+  { "address": "$D010", "name": "MSIGX", "description": "Sprite X coordinate MSBs, one bit per sprite", "category": "sprites" },
+  { "address": "$D015", "name": "SPENA", "description": "Sprite enable register, one bit per sprite", "category": "sprites" },
+  { "address": "$D020", "name": "EXTCOL", "description": "Border color", "category": "color" },
+  { "address": "$D021", "name": "BGCOL0", "description": "Background color 0", "category": "color" },
+  { "address": "$D011", "name": "SCROLY", "description": "Vertical fine scroll, screen control register 1 (bit 7 = raster MSB)", "category": "control" },
+  { "address": "$D012", "name": "RASTER", "description": "Current raster line / raster compare value", "category": "control" },
+  { "address": "$D019", "name": "VICIRQ", "description": "VIC interrupt request flags", "category": "interrupts" },
+  { "address": "$D01A", "name": "IRQMSK", "description": "VIC interrupt enable mask", "category": "interrupts" },
+  { "address": "$D01E", "name": "SPSPCL", "description": "Sprite-to-sprite collision flags", "category": "sprites" },
+  { "address": "$D01F", "name": "SPBGCL", "description": "Sprite-to-background collision flags", "category": "sprites" }
+]

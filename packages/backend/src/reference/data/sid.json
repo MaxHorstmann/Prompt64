@@ -1,0 +1,9 @@
+[
+  { "address": "$D400", "name": "FREQ1", "description": "Voice 1 frequency, low+high byte", "category": "voice1" },
+  { "address": "$D404", "name": "VCREG1", "description": "Voice 1 control register (waveform, gate)", "category": "voice1" },
+  { "address": "$D405", "name": "ATDCY1", "description": "Voice 1 attack/decay", "category": "voice1" },
+  { "address": "$D406", "name": "SUREL1", "description": "Voice 1 sustain/release", "category": "voice1" },
+  { "address": "$D418", "name": "SIGVOL", "description": "Master volume and filter mode", "category": "filter" },
+  { "address": "$D415", "name": "CUTLO", "description": "Filter cutoff frequency, low byte", "category": "filter" },
+  { "address": "$D416", "name": "CUTHI", "description": "Filter cutoff frequency, high byte", "category": "filter" }
+]

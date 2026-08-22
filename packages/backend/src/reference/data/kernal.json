@@ -1,0 +1,7 @@
+[
+  { "address": "$FFD2", "name": "CHROUT", "description": "Output one character (in A) to the current output device" },
+  { "address": "$FFE4", "name": "GETIN", "description": "Read one character from the keyboard buffer, non-blocking" },
+  { "address": "$FF81", "name": "CINT", "description": "Initialize screen editor and VIC-II" },
+  { "address": "$FFCF", "name": "CHRIN", "description": "Read one character from the current input device" },
+  { "address": "$FF9F", "name": "IOBASE", "description": "Return base address of the CIA I/O chips" }
+]
