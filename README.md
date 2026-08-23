@@ -23,7 +23,7 @@ cp packages/backend/.env.example packages/backend/.env
 npm run dev
 ```
 
-This runs the backend (Fastify, port 3001) and frontend (Vite, default port 5173) together. Open
+This runs the backend (Fastify, port 3001) and frontend (Vite, port 6464) together. Open
 the printed Vite URL — it proxies `/api` (REST and WebSocket) to the backend, so no separate CORS
 setup is needed.
 
